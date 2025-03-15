@@ -15,8 +15,7 @@ class DataHandler{
     }
 
     listPosts(){
-        const sorted = this.posts.sort()
-        return sorted
+        return this.posts.sort((a, b) => a.title.localeCompare(b.title));
     }
 
     getPosts(id){
@@ -34,13 +33,14 @@ async function execute(){
     await handler.fetchPosts();
     console.log(handler.getPosts(5));
 }
-execute();
 
-const clearer = new DataHandler();
+
 
 async function clear(){
-    await clearer.fetchPosts();
-    console.log(clearer.clearPosts());
+    await handler.fetchPosts();
+    console.log(handler.clearPosts());
 }
 
 clear();
+execute(7);
+listPosts();

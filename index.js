@@ -42,5 +42,5 @@ async function clear(){
 }
 
 clear();
-execute(7);
+console.log(execute(10))
 listPosts();
